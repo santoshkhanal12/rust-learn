@@ -7,10 +7,14 @@ fn main() {
     let mut coded_text=String::new();
     io::stdin()
        .read_line(&mut mode);
-    mode=mode.to_lowercase();    //Converts all characters to lowercase
+   
+
+
+    let mut mode=mode.trim().to_lowercase();    //Converts all characters to lowercase..removes the empty spaces and make the variable new for the the value used in the variable
     println!("You chose mode {}", mode);
 
-   if mode=="encrypt"{
+
+   if mode == "encrypt"{
       println!("You chose encrypt");
       println!("Enter the plain text:");
             io::stdin()
@@ -23,6 +27,10 @@ fn main() {
       io::stdin()
       .read_line(&mut coded_text);
    println!("The plain text is {}", coded_text);
+   }
+
+   else {
+
    }
   
 }

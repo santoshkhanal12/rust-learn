@@ -8,11 +8,10 @@ fn main() {
    io::stdin()
    .read_line(&mut text);
 println!("The entered string is {}", text);
- let type_of_text=type_name::<&str>();
-println!("{}",type_of_text);
- if text == "santosh"{
-   println!("You have entered your user name");
- }
+
+if text==String::from("Encrypt"){
+  println!("{}",text)
+}
 
 
 }
