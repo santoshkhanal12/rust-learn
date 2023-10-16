@@ -5,6 +5,7 @@ fn main() {
     let mut mode=String::new();
     let mut plain_text=String::new();
     let mut coded_text=String::new();
+    let mut iterations=String::new();
     io::stdin()
        .read_line(&mut mode);
    
@@ -15,21 +16,34 @@ fn main() {
 
 
    if mode == "encrypt"{
+      
       println!("You chose encrypt");
-      println!("Enter the plain text:");
+      println!("Enter the plain text");
+      println!("Enter code to code");
             io::stdin()
       .read_line(&mut plain_text);
-   println!("The plain text is {}", plain_text);
+             io::stdin()
+            .read_line(&mut iterations);
+   println!("The plain text is {} and code is {}", plain_text, iterations);
+   
+  
    }
    else  if mode=="decrypt"{
-      println!("You choose decrypt");
-      println!("Enter the coded text:");
+     println!("You choose decrypt");
+      println!("Enter the coded text");
+      println!("Enter the code to Decode");
+     
       io::stdin()
       .read_line(&mut coded_text);
-   println!("The plain text is {}", coded_text);
+   io::stdin()
+      .read_line(&mut iterations);
+   
+   println!("The plain text is {} and code is {}", coded_text, iterations);
    }
 
    else {
+
+      println!("Wrong text");
 
    }
   
