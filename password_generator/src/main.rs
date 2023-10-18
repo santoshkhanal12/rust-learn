@@ -1,9 +1,29 @@
 use std::io;
 
+fn coding(plain_text:String,iterations: i32){
+   let mut count=0;
+   while count<=iterations{
+      println!("Print {} iterations",count);
+     for letter in plain_text.chars(){
+      println!("{}",letter);
+     }
 
+     count=count+1;
+   } 
+   
+}
 
-
-
+fn decoding(coded_text: String,iterations: i32){
+   let mut count=0;
+   while count<=iterations{
+      println!("Print {} iterations",count);
+      for letter in coded_text.chars(){
+         println!("{}",letter);
+     
+     } 
+     count=count+1;
+   }
+}
 
 fn main() {
     println!("Please select the mode Encrypt or decrypt");
@@ -19,7 +39,7 @@ fn main() {
 
        let mut mode=mode.trim().to_lowercase();     //Converts all characters to lowercase..removes the empty spaces and make the variable new for the the value used in the variable
     println!("You chose mode {}", mode);
-
+    
 
    if mode == "encrypt"{
       
@@ -33,12 +53,7 @@ fn main() {
          let iterations: i32 = iterations.trim().parse().unwrap();
          let mut plain_text=plain_text.trim().to_lowercase();
    println!("The plain text is {} and code is {}", plain_text, iterations);
-   
-   let mut count=0;
-   while count<=iterations{
-      println!("Print {} iterations",count);
-     count=count+1;
-   }
+   coding(plain_text,iterations)
 
    }
    else  if mode=="decrypt"{
@@ -54,11 +69,8 @@ fn main() {
    let mut coded_text=coded_text.trim().to_lowercase();
    println!("The coded text is {} and code is {}", coded_text, iterations);
    
-   let mut count=0;
-   while count<=iterations{
-      println!("Print {} iterations",count);
-     count=count+1;
-   }
+   decoding(coded_text,iterations);
+   
    
    }
    
