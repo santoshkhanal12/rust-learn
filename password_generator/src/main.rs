@@ -1,28 +1,41 @@
 use std::io;
 
-fn coding(plain_text:String,iterations: i32){
+fn coding(mut plain_text:String,iterations: i32){
    let mut count=0;
+   let mut encoded_text: String = "".to_owned();
+
    while count<=iterations{
       println!("Print {} iterations",count);
-     for letter in plain_text.chars(){
-      println!("{}",letter);
+     for letter in plain_text.chars(){ 
+     if letter=='a'{
+      let mut addcoded: &str="b";
+      encoded_text.push_str(addcoded);
      }
+      
+   }
 
      count=count+1;
+    
    } 
    
+   println!("{}",encoded_text)
 }
 
-fn decoding(coded_text: String,iterations: i32){
+fn decoding(mut coded_text: String,iterations: i32){
    let mut count=0;
+   let mut decoded_text: String = "".to_owned();
    while count<=iterations{
       println!("Print {} iterations",count);
-      for letter in coded_text.chars(){
-         println!("{}",letter);
-     
-     } 
+      for letter in coded_text.chars(){ 
+         if letter=='a'{
+          let mut adddecoded: &str="b";
+          decoded_text.push_str(adddecoded);
+         }
+      }   
      count=count+1;
+   
    }
+   println!("{}",decoded_text)
 }
 
 fn main() {
